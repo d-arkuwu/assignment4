@@ -82,5 +82,13 @@ public:
 			cin >> issueableCount;
 		}
 	}
+	void printDetails()
+	{
+		cout << "Title : " << title << endl;
+		cout << "Author(s) : " << author << endl;
+		cout << "ISSN : " << ISSN << endl;
+		cout << "Books available as reference copies : " << referenceCount << endl;
+		cout << "Books available as issueable copies : " << issueableCount << endl;
+	}
 
 };

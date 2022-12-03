@@ -9,16 +9,27 @@ class HashMap
 {
     vector<list<HashItem<T>>> hashArray;
     int size;
+    int PRIME;
+    int a;
+    int b;
 
 public:
     HashMap()
     {
+        PRIME = 7;
         size = 10;
         hashArray.resize(size);
+        initializeHashFunction();
+    }
+    void initializeHashFunction()
+    {
+        srand(time(0));
+        a = (rand() % PRIME) + 1;
+        b = rand() % PRIME;
     }
     int hash(int key)
     {
-        int index = key % size;
+        int index = ((a * key + b) % PRIME) % size;
         return index;
     }
     void insert(int key, T const value)
@@ -50,11 +61,19 @@ public:
         }
         return NULL;
     }
-    void remove(int key)
+    bool remove(int key)
     {
         int index = hash(key);
         auto toDelete = search(key);
-        hashArray[index].remove(*toDelete);    
+        if(toDelete)
+        {
+            hashArray[index].remove(*toDelete); 
+            return true;
+        }  
+        else
+        {
+            return false;
+        }
     }
 
 };
