@@ -17,5 +17,6 @@ int main()
     //lib.searchBook();
     lib.editBook();
     cout << endl;
+    lib.deleteBook();
     lib.printTable();
 }

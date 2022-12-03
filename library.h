@@ -58,4 +58,10 @@ public:
             (*h).getValue().update();
         }
     }
+    void deleteBook()
+    {
+        int issn;
+        cout << "Enter the ISSN number of the book you wish to delete\n"; cin >> issn;
+        lib.remove(issn);
+    }
 };

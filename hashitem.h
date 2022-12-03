@@ -3,7 +3,7 @@ struct HashItem
 {
 	int key;
 	v value;
-
+    
 	HashItem()
 	{
     }
@@ -29,5 +29,16 @@ struct HashItem
     v& getValue()
     {
         return value;
+    }
+    friend bool operator == (HashItem h1, const HashItem h2)
+    {
+        if(h1.value == h2.value)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 };

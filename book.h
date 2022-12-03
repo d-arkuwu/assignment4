@@ -14,6 +14,14 @@ class Book
         cout << b.title;
         return out;
     }
+	friend bool operator == (Book b1, const Book b2)
+	{
+		if(b1.ISSN == b2.ISSN)
+			return true;
+		else
+			return false;
+	}
+
 public:
     Book() {}
     Book(int issn, string t, string a, int refC, int issC)
@@ -49,7 +57,6 @@ public:
 			getline(cin, title);
 		}
 
-
 		cout << "Do you wish to change the list of authors of the book? (Y/N)";
 		cin >> c;
 		if (c == 'y' || c == 'Y')
@@ -59,7 +66,6 @@ public:
 			getline(cin, author);
 		}
 
-
 		cout << "Do you wish to change the # of copies available as reference book of the book? (Y/N)";
 		cin >> c;
 		if (c == 'y' || c == 'Y')
@@ -68,7 +74,6 @@ public:
 			cin >> referenceCount;
 		}
 
-
 		cout << "Do you wish to change the # of copies available as issuable book of the book? (Y/N)";
 		cin >> c;
 		if (c == 'y' || c == 'Y')
@@ -76,7 +81,6 @@ public:
 			cout << "\nEnter number of copies available as issuable book : ";
 			cin >> issueableCount;
 		}
-
 	}
 
 };
