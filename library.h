@@ -6,9 +6,7 @@ class Library
 {
     HashMap<Book> lib;
 
-public:
-    Library() {}
-    void insert()
+        void insert()
     {
         int issn, refC, issC;
         string t;
@@ -85,6 +83,10 @@ public:
             cout << "Book not found\n";
         }
     }
+
+public:
+    Library() {}
+
     void run()
 	{
 		bool flag = true;
