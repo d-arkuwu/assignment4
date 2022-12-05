@@ -17,7 +17,7 @@ public:
     HashMap()
     {
         PRIME = 7;
-        size = 10;
+        size = 10; 
         hashArray.resize(size);
         initializeHashFunction();
     }
