@@ -24,7 +24,7 @@ public:
     void initializeHashFunction()
     {
         srand(time(0));
-        a = (rand() % PRIME) + 1;
+        a = (rand() % (PRIME - 1) ) + 1;
         b = rand() % PRIME;
     }
     int hash(int key)
@@ -75,5 +75,4 @@ public:
             return false;
         }
     }
-
 };

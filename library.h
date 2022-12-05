@@ -5,7 +5,7 @@
 class Library
 {
     HashMap<Book> lib;
-
+    
         void insert()
     {
         int issn, refC, issC;

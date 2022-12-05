@@ -2,6 +2,6 @@
 
 int main()
 {
-    Library lib;
-    lib.run();
+    Library library;
+    library.run();
 }
