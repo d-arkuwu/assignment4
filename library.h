@@ -5,7 +5,7 @@
 class Library
 {
     HashMap<Book> lib;
-    
+
         void insert()
     {
         int issn, refC, issC;
@@ -50,7 +50,10 @@ class Library
         int issn;
         cout << "Enter the ISSN number of the book you wish to review\n"; cin >> issn;
         HashItem<Book>* h = lib.search(issn);
-        (*h).getValue().printDetails();
+        if(h)
+            (*h).getValue().printDetails();
+        else
+            cout << "Book not found\n";
     }
     void editBook()
     {
@@ -134,6 +137,7 @@ public:
 			{
                 system("clear");
 				printTable();
+                break;
 			}
 			default:
 				flag = false;
